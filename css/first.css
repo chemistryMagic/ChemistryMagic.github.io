@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:wght@400;700');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.hidden {
+    opacity:0;
+}
+
+.FristPage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(16, 23, 37);
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.FristPage .fp-title {
+    position: relative;
+    width: 40vh;
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    /* background-color: red; */
+}
+
+.FristPage .fp-title .console-container {
+    position: relative;
+    height:100%;
+    padding: 0 15px;
+    color:white;
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.FristPage .fp-title .console-container span,
+.FristPage .fp-title .console-container .console-underscore {
+    font-weight: 700;
+    font-family:Khula;
+    font-size:2.3em;
+    text-align:center;
+}
+
+.FristPage .fp-title .console-container .console-underscore {
+    display:inline-block;
+    position:relative;
+    top:-0.14em;
+    left:10px;
+}
+
+.FristPage .fp-title svg {
+    position: relative;
+    min-height: 100px;
+    max-height: 100px;
+    width: 120px;
+}
+
+.FristPage .fp-title svg path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 500;
+    animation: dash 4s linear alternate 1;
+}
+
+@keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 500;
+    }
+}
+
+.FristPage .creators-info {
+    position: relative;
+    width: 100%;
+    min-height: 10vh;
+    height: auto;
+    /* background: green; */
+    padding: 20px 0;
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    overflow-y: auto;
+}
+
+.FristPage .creators-info .creator-box {
+    position: relative;
+    width: 280px;
+    height: 320px;
+    background: linear-gradient(
+        to bottom,
+        #42424294 25%,
+        #858788a1
+    );
+    border: 1px solid #858788;
+    border-radius: 5px;
+
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    /* overflow: hidden; */
+}
+
+.FristPage .creators-info .creator-box .c-name {
+    position: relative;
+    top: 5px;
+    padding: 5px;
+    font-size: 1.8vh;
+    /* background-color: red; */
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #eee;
+}
+
+.FristPage .creators-info .creator-box .c-body {
+    position: relative;
+    width: 80%;
+    padding: 5px;
+    font-size: 1.5vh;
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: #eee;
+}
+
+.FristPage .creators-info .creator-box .c-add {
+    position: relative;
+    bottom: 5px;
+    height: 3.0vh;
+    border-radius: 3px;
+    width: 80%;
+    background: #2e2f33;
+    color: #eee;
+    z-index: 1;
+    cursor: pointer;
+    transition: 1s color;
+
+    font-weight: 400;
+    font-family:Khula;
+    font-size:1em;
+    text-align:center;
+}
+
+.FristPage .creators-info .creator-box .c-add::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgb(217, 255, 0);
+    z-index: -1;
+    transition: 1s;
+}
+
+.FristPage .creators-info .creator-box .c-add:hover {
+    color: #000;
+}
+
+.FristPage .creators-info .creator-box .c-add:hover::before {
+    width: 80%;
+}
+
+.FristPage .show-main-website {
+    position: relative;
+    padding: 50px 30px;
+    opacity: 0;
+    /* background-color: blue; */
+}
+
+.FristPage .show-main-website a {
+    text-decoration: none;
+}
+
+.FristPage .show-main-website a .fp-sh-m-w-btn {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5em;
+    letter-spacing: .1em;
+    color: #0ef;
+    background: #1f293d;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid #0ef;
+    border-radius: 30px;
+    padding: 5px 30px;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 1s, box-shadow 1s;
+}
+
+.FristPage .show-main-website a .fp-sh-m-w-btn:hover {
+    transition-delay: 0s, 1s;
+    color: #fff;
+    box-shadow: 
+    0 0 10px #0ef,
+    0 0 20px #0ef,
+    0 0 40px #0ef,
+    0 0 80px #0ef,
+    0 0 160px #0ef;
+}
+
+.FristPage .show-main-website a .fp-sh-m-w-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0%;
+    height: 100%;
+    background: #0ef;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: 1s;
+}
+
+.FristPage .show-main-website a .fp-sh-m-w-btn:hover::before {
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .FristPage .creators-info .creator-box {
+        max-width: 180px;
+        max-height: 250px;
+    }
+}

@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope:700|Manrope:400');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+:root {
+    --text: hsl(0, 0%, 99%);
+    --textDim: hsl(0, 0%, 60%);
+    --background: hsl(0, 0%, 7%);
+    --primary: hsl(155, 100%, 65%);
+    --primaryBg: hsla(155, 100%, 65%, 1%);
+    --primaryHi: hsla(155, 100%, 75%, 25%);
+    --primaryFg: hsl(155, 100%, 85%);
+    --secondary: hsl(156, 51%, 14%);
+    --secondaryFg: hsl(156, 51%, 75%);
+    --secondaryBg: hsla(156, 51%, 14%, 5%);
+    --secondaryHi: hsla(156, 51%, 30%, 50%);
+    --accent: hsl(155, 100%, 94%);
+    --accentBg: hsla(155, 100%, 94%, 1%);
+    --accentHi: hsla(155, 100%, 100%, 25%);
+}
+
+.Main_Page {
+    /* position: absolute; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* background: rgb(16, 23, 37); */
+
+    font-family: 'Manrope';
+    font-weight: 400;
+    background-color: var(--background);
+    color: var(--text);
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    /* display: none; */
+}
+
+.Main_Page .grid {
+    position: absolute;
+    height: 100%;
+    weight: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    z-index: 0;
+}
+
+.Main_Page .grid-svg {
+    height: 80%;
+    width: 80%;
+    position: relative;
+    z-index: 1;
+}
+
+.Main_Page .blur {
+    height: 12rem;
+    width: 12rem;
+    background-color: var(--primary);
+    filter: blur(100px);
+    border-radius: 100px;
+    z-index: 0;
+    position: absolute;
+}
+
+.Main_Page .title {
+    font-size: 10rem;
+    font-weight: 700;
+    letter-spacing: -0.8rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-self: center;
+    height: 100%;
+    z-index: 1000;
+    user-select: none;
+}
+
+.Main_Page .title > p {
+    margin: 0;
+    line-height: 10rem;
+    width: auto;
+}
+
+.Main_Page .title > p:nth-child(1) {
+    align-self: flex-start;
+}
+
+.Main_Page .title > p:nth-child(2) {
+    color: var(--primary);
+    align-self: flex-end;
+}
+
+.Main_Page .title > p:nth-child(3) {
+    align-self: flex-end;
+}
+
+
+
+.Main_Page .button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    height: 50px;
+    width: 160px;
+    z-index: 9999;
+}
+
+.Main_Page button {
+    height: 50px;
+    width: 160px;
+    clip-path: path("M 0 25 C 0 -5, -5 0, 80 0 S 160 -5, 160 25, 165 50 80 50, 0 55, 0 25");
+    border: none;
+    border-radius: 13px;
+    background-color: var(--primaryBg);
+    box-shadow: 0px -3px 15px 0px var(--primaryHi) inset;
+    color: var(--primaryFg);
+    font-family: "Manrope";
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(0px);
+    transition: all 0.2s ease;
+}
+
+.Main_Page span {
+    width: 100px;
+    height: 60px;
+    background-color: var(--primaryHi);
+    border-radius: 100%;
+    filter: blur(20px);
+    position: absolute;
+    bottom: -50%;
+    transition: all 0.2s ease;
+}
+
+.Main_Page .button:hover span {
+    opacity: 60%;
+}
+
+.Main_Page .button:hover > button {
+    transform: translateY(5px);
+}
+
+.Main_Page .button.first {
+    top: 12%;
+    right: 20%;
+}
+
+.Main_Page .button.sec {
+    bottom: 13%;
+    right: 11%;
+}
+
+.Main_Page .button.sec > button {
+    background-color: var(--accentBg);
+    box-shadow: 0px -3px 15px 0px var(--accentHi) inset;
+    color: var(--accentFg);
+}
+
+.Main_Page .button.sec > span {
+    background-color: var(--accentHi);
+}
+
+.Main_Page .button.third {
+    bottom: 25%;
+    left: 15%;
+}
+  
+.Main_Page .button.third > button {
+    background-color: var(--secondaryBg);
+    box-shadow: 0px -3px 15px 0px var(--secondary) inset;
+    color: var(--secondaryFg);
+}
+  
+.Main_Page .button.third > span {
+    background-color: var(--secondaryHi);
+}
+
+.Main_Page .button.fourth {
+    top: 22%;
+    left: 16%;
+}
+
+.Main_Page .button.fourth > button {
+    background-color: var(--accentBg);
+    box-shadow: 0px -3px 15px 0px var(--accentHi) inset;
+    color: var(--accentFg);
+}
+
+.Main_Page .button.fourth > span {
+    background-color: var(--accentHi);
+}
+
+.Main_Page .top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    opacity: 50%;
+}
+
+.Main_Page .bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+    .title {
+      font-size: 4rem !important;
+      line-height: 4rem !important;
+    }
+    
+    .title > p {
+      line-height: 5rem !important;
+      letter-spacing: -0.3rem !important;
+    }
+
+    .FristPage .creators-info .creator-box {
+        max-width: 180px;
+        max-height: 250px;
+    }
+}
+
+/* .Main_Page .HelpfulPage {
+    position: absolute;
+    height: 35vh;
+    top: 35%;
+    right: 0;
+    padding: 1px;
+    background: green;
+    transform: translateY(-50%);
+    z-index: 99999;
+    display: flex;
+}
+
+.Main_Page .HelpfulPage .toggle-box {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px 0 0 6px;
+    background: rgb(35, 67, 94);
+    border-top: 1.5px solid rgb(147, 150, 151);
+    border-left: 1.5px solid rgb(147, 150, 151);
+    border-bottom: 1.5px solid rgb(147, 150, 151);
+    cursor: pointer;
+}
+
+.Main_Page .HelpfulPage .toggle-box span {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.6vh;
+    font-weight: 700;
+    color: #eee;
+}
+
+.Main_Page .HelpfulPage .help-text {
+    display: none;
+    position: relative;
+    width: 0;
+    height: 100%;
+    user-select: none;
+    background: red;
+} */
